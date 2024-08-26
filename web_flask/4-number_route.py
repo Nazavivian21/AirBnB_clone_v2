@@ -31,5 +31,13 @@ def number(n):
     return f"{n} is a number"
 
 
+@app.route('/number_template/<int:n>', strict_slashes=False)
+def number_template(n):
+    return render_template('number.html', n=n)
+
+<h1>Number: {{ n }}</h1>
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
